@@ -1,0 +1,22 @@
+# Spring配置
+spring:
+  application:
+    name: xxl-job-admin
+  cloud:
+    nacos:
+      config:
+        server-addr: ${nacos.url}
+        namespace: ${nacos.namespace}
+        username: ${nacos.username}
+        password: ${nacos.password}
+        # 扩展配置 extension-configs 优先级 > shared-configs
+#        extension-configs:
+#          - data-id: ${nacos.common.config}
+#            refresh: true
+        file-extension: yml
+        config-retry-time: 300000
+      discovery:
+        server-addr: ${nacos.url}
+        namespace: ${nacos.namespace}
+        username: ${nacos.username}
+        password: ${nacos.password}
